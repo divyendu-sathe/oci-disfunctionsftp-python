@@ -49,8 +49,8 @@ def handler(ctx, data: io.BytesIO = None):
       ##print("Read secret from the vault", flush=True)
 
       ##pkey = paramiko.RSAKey.from_private_key(StringIO(secret_contents))
-      port = 22
-      password="testPassword"
+      port = 10111
+      password= Myword1234?dec
       print("Connecting to host", flush=True)
       con = Transport(host, port)
       con.connect(None,username=username, password=password )
