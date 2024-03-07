@@ -41,19 +41,19 @@ def handler(ctx, data: io.BytesIO = None):
 
     try:
       # In the base case, configuration does not need to be provided as the region and tenancy are obtained from the InstancePrincipalsSecurityTokenSigner
-      identity_client = oci.identity.IdentityClient(config={}, signer=signer)
+      ##identity_client = oci.identity.IdentityClient(config={}, signer=signer)
       # Get instance principal context
-      print("Reading secret from the vault", flush=True)
-      secret_client = oci.secrets.SecretsClient(config={}, signer=signer)
-      secret_contents = read_secret_value(secret_client, secret_id)
-      print("Read secret from the vault", flush=True)
+      ##print("Reading secret from the vault", flush=True)
+      ##secret_client = oci.secrets.SecretsClient(config={}, signer=signer)
+      ##secret_contents = read_secret_value(secret_client, secret_id)
+      ##print("Read secret from the vault", flush=True)
 
-      pkey = paramiko.RSAKey.from_private_key(StringIO(secret_contents))
+      ##pkey = paramiko.RSAKey.from_private_key(StringIO(secret_contents))
       port = 22
-
+      password="testPassword"
       print("Connecting to host", flush=True)
       con = Transport(host, port)
-      con.connect(None,username=username, pkey=pkey)
+      con.connect(None,username=username, password=password )
       sftp = SFTPClient.from_transport(con)
       #sftp.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
