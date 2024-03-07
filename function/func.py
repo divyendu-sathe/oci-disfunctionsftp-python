@@ -50,10 +50,10 @@ def handler(ctx, data: io.BytesIO = None):
 
       ##pkey = paramiko.RSAKey.from_private_key(StringIO(secret_contents))
       port = 10111
-      password= Myword1234?dec
+      
       print("Connecting to host", flush=True)
       con = Transport(host, port)
-      con.connect(None,username=username, password=password )
+      con.connect(None,username=username, password=secret_id )
       sftp = SFTPClient.from_transport(con)
       #sftp.set_missing_host_key_policy(paramiko.AutoAddPolicy())
 
